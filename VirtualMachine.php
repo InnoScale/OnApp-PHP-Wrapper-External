@@ -392,12 +392,19 @@ class OnApp_VirtualMachine extends OnApp {
 
             case 3.0:
             case 3.1:
+                $this->fields = $this->initFields( 2.3 );
+                break;
             case 3.2:
             case 3.3:
                 $this->fields = $this->initFields( 2.3 );
                 $this->fields[ 'type_of_format' ] = array(
                     ONAPP_FIELD_MAP       => 'type_of_format',
                     ONAPP_FIELD_TYPE      => 'string',
+                );
+                $this->fields['recipe_ids'] = array (
+                    ONAPP_FIELD_MAP => '_recipe_ids',
+                    ONAPP_FIELD_TYPE => 'array',
+                    ONAPP_FIELD_READ_ONLY => false,                
                 );
                 break;
         }
