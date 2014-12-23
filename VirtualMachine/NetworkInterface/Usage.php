@@ -67,6 +67,11 @@ class OnApp_VirtualMachine_NetworkInterface_Usage extends OnApp {
                         ONAPP_FIELD_TYPE      => 'datetime',
                         ONAPP_FIELD_READ_ONLY => true,
                     ),
+                    'stat_time'            => array(
+                        ONAPP_FIELD_MAP       => '_stat_time',
+                        ONAPP_FIELD_TYPE      => 'datetime',
+                        ONAPP_FIELD_READ_ONLY => true,
+                    ),
                     'data_received'        => array(
                         ONAPP_FIELD_MAP       => '_data_received',
                         ONAPP_FIELD_TYPE      => 'integer',
@@ -99,6 +104,7 @@ class OnApp_VirtualMachine_NetworkInterface_Usage extends OnApp {
             case 3.1:
             case 3.2:
             case 3.3:
+            case 3.4:
                 $this->fields = $this->initFields( 2.3 );
                 break;
         }
